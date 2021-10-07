@@ -2,9 +2,13 @@
 
 <ul>
   <li *ngFor="let user of usersData$">
-    <a> {{ user.email }} </a>
+    <a> {{ user.email | uppercase }} </a>
     <!-- {{ user | json }} -->
   </li>
 </ul>
 
 <p>{{ userdetail | json }}</p>
+
+<h5>Today's Date : {{ todaysDate | date }}</h5>
+
+<h3>price : {{ currencyValue | currency }}</h3>

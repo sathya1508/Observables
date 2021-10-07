@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { UserService, User } from './users.service';
 
-
 @Component({
   selector: 'hello',
   templateUrl: './hello.component.html',
@@ -15,6 +14,8 @@ export class HelloComponent {
   users: any;
   usersData$: any;
   userdetail: User;
+  todaysDate: any;
+  currencyValue: any;
 
   constructor(private usersService: UserService) {}
 
@@ -28,11 +29,14 @@ export class HelloComponent {
       console.log(this.usersData$);
     });
 
-    this.usersService.viewUser(1).toPromise()
-  .then(response => {
-    this.userdetail = response;
-  })
-  }
+    this.todaysDate = Date.now();
+    this.currencyValue = 125;
 
-  
+    this.usersService
+      .viewUser(1)
+      .toPromise()
+      .then((response) => {
+        this.userdetail = response;
+      });
+  }
 }
