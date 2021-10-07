@@ -11,4 +11,8 @@ export class UserService {
   getUsers(): Observable<object> {
     return this.http.get('https://jsonplaceholder.cypress.io/users');
   }
+
+  viewUser(id: number) {
+    return this.http.get('https://jsonplaceholder.cypress.io/users/' + id);
+  }
 }

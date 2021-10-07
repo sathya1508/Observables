@@ -13,6 +13,7 @@ export class HelloComponent {
   contacts$: any;
   users: any;
   usersData$: any;
+  userdetail: any;
 
   constructor(private usersService: UserService) {}
 
@@ -25,5 +26,12 @@ export class HelloComponent {
       this.usersData$ = data;
       console.log(this.usersData$);
     });
+
+    this.usersService.viewUser(1).toPromise()
+  .then(response => {
+    this.userdetail = response;
+  })
   }
+
+  
 }

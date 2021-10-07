@@ -1,9 +1,10 @@
 <p>Home is hello component</p>
 
-
 <ul>
-  <li *ngFor=" let user of usersData$">
-    {{ user.email }}
-    {{ user | json }}
+  <li *ngFor="let user of usersData$">
+    <a> {{ user.email }} </a>
+    <!-- {{ user | json }} -->
   </li>
 </ul>
+
+<p>{{ userdetail.email }}</p>
