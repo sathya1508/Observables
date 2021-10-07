@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+export interface User {
+  name: string;
+  email: string;
+  id: number;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +17,9 @@ export class UserService {
     return this.http.get('https://jsonplaceholder.cypress.io/users');
   }
 
-  viewUser(id: number) {
-    return this.http.get('https://jsonplaceholder.cypress.io/users/' + id);
+  viewUser(id: number): Observable<User> {
+    return this.http.get<User>(
+      'https://jsonplaceholder.cypress.io/users/' + id
+    );
   }
 }

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { UserService } from './users.service';
+import { UserService, User } from './users.service';
+
 
 @Component({
   selector: 'hello',
@@ -13,7 +14,7 @@ export class HelloComponent {
   contacts$: any;
   users: any;
   usersData$: any;
-  userdetail: any;
+  userdetail: User;
 
   constructor(private usersService: UserService) {}
 
