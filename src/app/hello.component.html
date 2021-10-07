@@ -10,5 +10,10 @@
 <p>{{ userdetail | json }}</p>
 
 <h5>Today's Date : {{ todaysDate | date }}</h5>
+<h5>Formatted Date : {{ todaysDate | date: 'MMM dd,yy' }}</h5>
 
 <h3>price : {{ currencyValue | currency }}</h3>
+
+<h3>price in pounds : {{ currencyValue | currency: 'INR' }}</h3>
+
+<h3>In percentage : {{ currencyValue / 100 | percent }}</h3>
